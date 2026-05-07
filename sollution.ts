@@ -15,6 +15,7 @@ filterEvenNumbers([1, 2, 3, 4, 5, 6]);
 
 
 
+
 // Problem 2:
 
 
@@ -46,8 +47,6 @@ const checkType = (input: StringOrNumber): unknown => {
 
 console.log(checkType("Hello"));
 
-console.log(checkType(42));
-
 
 
 
@@ -64,8 +63,6 @@ const getProperty: <T extends object, K extends keyof T>(
 };
 
 const user = { id: 1, name: "John Doe", age: 21 };
-
-console.log(getProperty(user, "name"));
 
 
 
@@ -130,7 +127,6 @@ class Student extends Person {
 
 const student = new Student("Alice", 20, "A");
 student.getDetails();
-// console.log(student.getDetails());
 
 
 
