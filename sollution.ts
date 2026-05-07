@@ -53,14 +53,6 @@ console.log(checkType(42));
 
 
 // Problem 4:
-// Write a generic function getProperty that takes an object and a key, then returns the value of that key. Use constraints to ensure the key exists on the object.
-
-// Sample Input:
-// const user = { id: 1, name: "John Doe", age: 21 };
-// getProperty(user, "name");
-
-// Sample Output:
-// "John Doe";
 
 
 
@@ -74,7 +66,32 @@ const getProperty : <T extends object, K extends keyof T>(obj: T, key: K) => T[K
 
 const user = { id: 1, name: "John Doe", age: 21 };
 
-getProperty(user, "name");
+console.log(getProperty(user, "name"));
+
+
+
+// Problem 5:
+
+
+
+interface Book {
+    title: string;
+    author: string;
+    publishedYear: number;
+}
+
+interface newReadableBook extends Book{
+    isRead: boolean
+}
+
+const toggleReadStatus = (book : Book) : newReadableBook => { 
+    const newObject = {...book, isRead: true};
+    return newObject;
+}
+
+const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
+
+toggleReadStatus(myBook)
 
 
 
